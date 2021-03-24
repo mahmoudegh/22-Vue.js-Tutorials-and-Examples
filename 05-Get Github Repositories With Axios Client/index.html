@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <input type="text" v-model="username" />
+      <button @click="getRepos">Get Repos</button>
+      <div v-for="repo in repos">
+        <h4>{{repo.name}}</h4>
+        <p>{{repo.description}}</p>
+        <hr />
+      </div>
+    </div>
+    <div class="vid-link" style="margin-top: 30px">
+      <a
+        href="https://www.youtube.com/watch?v=GDC-KYf6cB8&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=6"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          username: null,
+          repos: null,
+        },
+        methods: {
+          getRepos: function () {
+            /*
+              [1] Get data from API
+              [2] Return the response
+              [3] Catch Error
+            */
+            return axios
+              .get(`https://api.github.com/users/${this.username}/repos`)
+              .then((response) => {
+                this.repos = response.data;
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

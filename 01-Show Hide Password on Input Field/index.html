@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <form action="">
+        <input :type="fieldType" placeholder="Type Your Passwprd" />
+        <button @click.prevent="switchField()">Show/Hide Password</button>
+      </form>
+    </div>
+    <div class="vid-link" style="margin-top: 30px">
+      <a
+        href="https://www.youtube.com/watch?v=jXFSv12nUhI&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=1"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          fieldType: "password",
+        },
+        methods: {
+          switchField() {
+            // if (this.fieldType === "password") {
+            //   this.fieldType = "text";
+            // } else {
+            //   this.fieldType = "password";
+            // }
+            this.fieldType = this.fieldType === "password" ? "text" : "password";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

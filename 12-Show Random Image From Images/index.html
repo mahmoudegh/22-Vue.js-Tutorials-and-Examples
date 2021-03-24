@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <img v-if="selected" :src="selected" alt="" />
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=Bw2QweoZHQw&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=12"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var photos = [
+        "http://placehold.it/400/f00/fff",
+        "http://placehold.it/400/00f/fff",
+        "http://placehold.it/400/080/fff",
+        "http://placehold.it/400/000/fff",
+        "http://placehold.it/400/aaa/fff",
+      ];
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          photos: photos,
+          selected: null,
+        },
+        methods: {
+          randomPhoto(imgs) {
+            return imgs[Math.floor(Math.random() * photos.length)];
+          },
+        },
+        created() {
+          this.selected = this.randomPhoto(this.photos);
+        },
+      });
+    </script>
+  </body>
+</html>

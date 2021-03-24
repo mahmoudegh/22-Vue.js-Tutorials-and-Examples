@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <h4>Wite Your Message ( {{maxLength}} Characters Allowed )</h4>
+      <textarea @input="countChars" v-model="message" :maxlength="maxLength"></textarea>
+      <span class="counter" :class="{'zero' : reachZero}"> Left | <span> {{remainingChars}} </span></span>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=pPSpA1-5rsk&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=16"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          maxLength: 10,
+          remainingChars: 10,
+          message: null,
+          reachZero: false,
+        },
+        methods: {
+          countChars: function () {
+            this.remainingChars = this.maxLength - this.message.length;
+            this.reachZero = this.remainingChars === 0;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

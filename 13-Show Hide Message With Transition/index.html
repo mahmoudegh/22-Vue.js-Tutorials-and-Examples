@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <button @click="message = !message">{{message ? 'Hide Message' : 'Show Message'}}</button>
+      <transition name="bounce">
+        <div class="message" v-if="message">This Is An Alert!</div>
+      </transition>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=Y1qBr1VCm-A&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=14"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          message: true,
+        },
+        methods: {},
+      });
+    </script>
+  </body>
+</html>

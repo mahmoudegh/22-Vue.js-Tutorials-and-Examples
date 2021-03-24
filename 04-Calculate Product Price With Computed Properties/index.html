@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container">
+      <div class="product">
+        <h3>Product Title</h3>
+        <p>Product Description</p>
+        <span class="price">Price: ${{price}} </span>
+        <span class="amount-title">Amount: {{amount}} </span>
+        <input type="range" min="1" max="20" step="1" v-model="amount" />
+        <div class="total-price">
+          <span class="amount">Amount: {{amount}}</span>
+          <span class="total">Total ${{totalPrice}} </span>
+        </div>
+      </div>
+    </div>
+    <div class="vid-link" style="margin-top: 30px">
+      <a
+        href="https://www.youtube.com/watch?v=kdWRBuwWeec&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=5"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          amount: 1,
+          price: 50,
+        },
+        computed: {
+          totalPrice: function () {
+            return this.amount * this.price;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

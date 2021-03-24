@@ -1,0 +1,71 @@
+* {
+  font-family: Arial, Tahoma;
+  box-sizing: border-box;
+}
+.container {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  width: 70%;
+}
+.container button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  outline: none;
+  border: ipx solid #ccc;
+}
+.container .message {
+  text-align: center;
+  padding: 20px;
+  background-color: #eee;
+  border: ips solid #ccc;
+  border-radius: 6px;
+}
+/* .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+} */
+/* .slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+} */
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.vid-link {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #000;
+  margin-top: 30px;
+}
+.vid-link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}

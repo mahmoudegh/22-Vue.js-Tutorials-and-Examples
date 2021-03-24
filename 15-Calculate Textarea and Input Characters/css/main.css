@@ -1,0 +1,38 @@
+* {
+  font-family: Arial, Tahoma;
+  box-sizing: border-box;
+}
+.container {
+  text-align: center;
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+}
+.container textarea {
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  resize: none;
+  margin: 0 auto 20px;
+}
+.container .counter {
+  display: block;
+  text-align: right;
+}
+.container .counter.zero span {
+  color: #f00;
+}
+.vid-link {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #000;
+  margin-top: 30px;
+}
+.vid-link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}

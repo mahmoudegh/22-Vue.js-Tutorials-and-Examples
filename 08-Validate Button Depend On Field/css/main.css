@@ -1,0 +1,43 @@
+* {
+  font-family: Arial, Tahoma;
+  box-sizing: border-box;
+}
+.container {
+  text-align: center;
+  padding: 20px;
+}
+.container form {
+  margin: 0 auto;
+  width: 50%;
+}
+.container form input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+.container form button {
+  width: 100%;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+}
+.container form button:disabled {
+  opacity: .4;
+  cursor: no-drop;
+}
+.vid-link {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #000;
+  margin-top: 30px;
+}
+.vid-link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}

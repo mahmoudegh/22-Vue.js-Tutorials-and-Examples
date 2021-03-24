@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Tutorials and Examples</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app" class="container" :style="{ '--mainColor' : color }">
+      <ul class="switch-colors">
+        <li data-color="#b71540" @click="changeColor"></li>
+        <li data-color="#0c2461" @click="changeColor"></li>
+        <li data-color="#2c6382" @click="changeColor"></li>
+        <li data-color="#079992" @click="changeColor"></li>
+        <li data-color="#e58e26" @click="changeColor"></li>
+      </ul>
+      <div class="changes">
+        <div>Change</div>
+        <div>Change</div>
+        <div>Change</div>
+        <div>Change</div>
+      </div>
+    </div>
+    <div class="vid-link" style="margin-top: 30px">
+      <a
+        href="https://www.youtube.com/watch?v=PODFCPF6wII&list=PLDoPjvoNmBAzDuaT7kEURZQbw9dQHepK9&index=3"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#elzero-app",
+        data: {
+          color: "#b71540",
+        },
+        methods: {
+          changeColor: function (e) {
+            this.color = e.target.getAttribute("data-color");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
